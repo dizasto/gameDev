@@ -1,6 +1,3 @@
-
-
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -20,10 +17,10 @@ public class GameField extends JFrame {
         frame.setSize(new Dimension(600, 800));
         frame.setLayout(new FlowLayout());
 
-            panel = new JPanel();
-            panel.setPreferredSize(new Dimension(596, 800));
-            panel.setBackground(Color.BLACK);
-            panel.setFocusable(true);
+        panel = new JPanel();
+        panel.setPreferredSize(new Dimension(596, 800));
+        panel.setBackground(Color.BLACK);
+        panel.setFocusable(true);
 
         frame.add(panel);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

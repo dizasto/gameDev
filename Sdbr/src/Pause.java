@@ -1,14 +1,9 @@
-
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by dizasto on 17.06.2014.
- */
 public class Pause {
 
     public void menu (Graphics2D somebImg, GameField gf) {

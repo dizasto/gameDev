@@ -1,15 +1,10 @@
-
-
-
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 public class Menu {
-
     public void menu(Graphics2D somebImg, GameField gf) {
         if (gf.isInMenu()) {
             if (gf.menuInt() == 1) {
@@ -32,6 +27,5 @@ public class Menu {
                 }
             }
         }
-
     }
 }

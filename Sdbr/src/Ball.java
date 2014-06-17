@@ -1,4 +1,3 @@
-
 import javafx.scene.shape.Circle;
 
 import javax.imageio.ImageIO;
@@ -18,7 +17,7 @@ public class Ball extends Circle {
     private int diam = 16;
     private int rad = diam / 2;
 
-    private double gameStarts = 0;
+    //private double gameStarts = 0;
 
     private int x = (596 - 150) / 2 + 75;
     private int y = 700 - 2 * rad;
@@ -89,9 +88,9 @@ public class Ball extends Circle {
         _speed = d;
     }
 
-    public void newGame() {
-        gameStarts = 1;
-    }
+    //public void newGame() {
+    //    gameStarts = 1;
+    //}
 
     public void setDirection(int d) {
         alpha = d;
@@ -152,22 +151,5 @@ public class Ball extends Circle {
         alpha = 360 - alpha;
         alpha = alpha % 360;
     }
-
-
-
-
-
-
-
-    /*public void redraw(Graphics2D somebImg) {
-        somebImg.setColor(Color.WHITE);
-        somebImg.fillOval(x - rad, y - rad, diam, diam);
-    }
-
-    private void bInit() {
-        if (Puddle.isMoving()) {
-            _speed = 5;
-        }
-    }*/
 }
 

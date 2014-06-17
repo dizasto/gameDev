@@ -30,17 +30,6 @@ public class Main {
         final Pause ps = new Pause();
         final HUD h = new HUD();
 
-
-
-        /*final TimerTask menuTask = new TimerTask() {
-            @Override
-            public void run() {
-                BufferedImage tmpImg = new BufferedImage(600, 800, BufferedImage.TYPE_INT_RGB);
-                Graphics2D tmp = (Graphics2D) tmpImg.getGraphics();
-                m.curPanel().getGraphics().drawImage(tmpImg, 0, 0, null);
-            }
-        };*/
-
         final Timer timer = new Timer();
 
         TimerTask ballTask = new TimerTask() {
@@ -74,10 +63,6 @@ public class Main {
 
         timer.schedule(ballTask, 0, 10);
 
-    }
-
-    private static void iniStateCh() {
-        init = !init;
     }
 
     private static void setJ() {

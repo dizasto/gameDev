@@ -1,13 +1,7 @@
-
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-/**
- * Created by dizasto on 08.06.2014.
- */
 public class Controller extends KeyAdapter {
-
 
     public Controller(final Puddle pd, final GameField v) {
         v.curPanel().addKeyListener(new KeyAdapter() {
@@ -85,10 +79,8 @@ public class Controller extends KeyAdapter {
                                     System.exit(0);
                                 }
                             }
-
                         }
                     }
-
                 }
             }
 

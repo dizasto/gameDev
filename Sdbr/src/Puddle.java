@@ -1,14 +1,9 @@
-
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by dizasto on 09.06.2014.
- */
 public class Puddle {
 
     private int alpha;
@@ -165,27 +160,4 @@ public class Puddle {
     public void setY(int yy) {
         y = yy;
     }
-
-
-    /*public void rectDraw(Graphics2D somebImg) {
-        //if (_isPdAlive) {
-            somebImg.setColor(Color.WHITE);
-            somebImg.drawRect(x, y, width, height);
-        //}
-    }
-
-    public void rectMove() {
-        if (_isMoving) {
-            x += Math.round(Math.cos(Math.toRadians(alpha)) * _speed);
-            if (x <= 0) {
-                _isMoving = false;
-                x = 0;
-            } else {
-                if ((x + width) >= 596) {
-                    _isMoving = false;
-                    x = 596 - width;
-                }
-            }
-        }
-    }*/
 }
