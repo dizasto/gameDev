@@ -70,7 +70,7 @@ public class Ball extends Circle {
                     pd.setY(700);
                     pd.newGame();
                     _speed = 0;
-                    newGame();
+                    //newGame();
                     v.setNewGame(true);
                 }
                 BufferedImage img = null;
