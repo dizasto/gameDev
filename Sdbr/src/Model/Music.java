@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Music {
 
-    String mus[] = new String[]{"source/bdish.wav", "source/boom.wav", "source/bang.wav", "source/puddle.wav", "source/vilgelm.wav", "source/victory.wav", "source/click.wav", "source/enter.wav"};
+    String mus[] = new String[]{"source/bdish.wav", "source/boom.wav", "source/bang.wav", "source/puddle.wav", "source/vilgelm.wav", "source/victory.wav", "source/click.wav", "source/enter.wav", "source/background.wav"};
 
     public void sound(String f) {
         AudioPlayer pl = AudioPlayer.player;
@@ -25,6 +25,25 @@ public class Music {
 
         pl.start(loop);
     }
+
+
+    public void looped(String f) {
+        AudioPlayer pl = AudioPlayer.player;
+        AudioStream as;
+        AudioData ad;
+        ContinuousAudioDataStream loop = null;
+
+        try {
+            as = new AudioStream(new FileInputStream(f));
+            ad = as.getData();
+            loop = new ContinuousAudioDataStream(ad);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        pl.start(loop);
+    }
+
 
     public String[] getMus() {
             return mus;

@@ -28,11 +28,13 @@ public class Main {
             astrs[i] = new Objects();
         }
 
+
         final Logics obs = new Logics();
         final Pause ps = new Pause();
         final HUD h = new HUD();
         final Ending en = new Ending();
         final Music mu = new Music();
+        mu.looped(mu.getMus()[8]);
 
         final Controller ctrl = new Controller(pd, gf, mu);
 
