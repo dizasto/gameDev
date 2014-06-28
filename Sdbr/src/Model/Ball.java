@@ -1,16 +1,14 @@
 package Model;
 
 import View.GameField;
-import javafx.scene.shape.Circle;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Ball extends Circle {
+public class Ball {
 
     private int alpha;
     private int j = 0;

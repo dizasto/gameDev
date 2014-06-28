@@ -5,7 +5,6 @@ import sun.audio.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-
 public class Music {
 
     String mus[] = new String[]{"source/bdish.wav", "source/boom.wav", "source/bang.wav", "source/puddle.wav", "source/vilgelm.wav", "source/victory.wav", "source/click.wav", "source/enter.wav"};

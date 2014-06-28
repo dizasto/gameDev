@@ -96,7 +96,7 @@ public class Logics {
                                                 b.upSpeed();
                                                 b.reverseY();
                                                 b.setDirection(b.getDirection() - aChg);
-                                                if (b.getDirection() <= 201) {
+                                                if (b.getDirection()%360 <= 201) {
                                                     b.setDirection(b.getDirection() + aChg);
                                                 }
                                             } else {
@@ -104,7 +104,7 @@ public class Logics {
                                                     b.downSpeed();
                                                     b.reverse();
                                                     b.setDirection(b.getDirection() + aChg);
-                                                    if (b.getDirection() >= 339) {
+                                                    if (b.getDirection()%360 >= 339) {
                                                         b.setDirection(b.getDirection() - aChg);
                                                     }
                                                 }
@@ -120,7 +120,7 @@ public class Logics {
                                                     b.upSpeed();
                                                     b.reverse();
                                                     b.setDirection(b.getDirection() + aChg);
-                                                    if (b.getDirection() <= 201) {
+                                                    if (b.getDirection()%360 <= 201) {
                                                         b.setDirection(b.getDirection() - aChg);
                                                     }
                                                 } else {
@@ -128,7 +128,7 @@ public class Logics {
                                                         b.setSpeed(b.getSpeed() + 0.2);
                                                         b.downSpeed();
                                                         b.setDirection(b.getDirection() - aChg);
-                                                        if (b.getDirection() <= 339) {
+                                                        if (b.getDirection()%360 <= 339) {
                                                             b.setDirection(b.getDirection() + aChg);
                                                         }
                                                     }
@@ -144,8 +144,6 @@ public class Logics {
                                         cgang++;
                                     }
                                 }
-                                System.out.println("Отскочила по y");
-                                System.out.println((Math.abs(b.getDirection())) % 360);
                                 m.sound(m.getMus()[3]);
                             }
                         }
