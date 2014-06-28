@@ -1,6 +1,10 @@
 
 
 
+import Controller.Controller;
+import Model.*;
+import View.*;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Timer;
@@ -8,27 +12,29 @@ import java.util.TimerTask;
 
 public class Main {
 
-    private static int k = 0;
-    private static int j = 0;
-    private static boolean init = false;
+
 
 
     public static void main(String args[]) {
 
         final GameField gf = new GameField();
-        final Menu m = new Menu();
+        final View.Menu m = new View.Menu();
 
         final Ball bl = new Ball();
         final Puddle pd = new Puddle();
-        final int n = 1000;
+        final int n = 6;
         final Objects[] astrs = new Objects[n];
         for (int i = 0; i < n; i++) {
             astrs[i] = new Objects();
         }
 
-        final Controller ctrl = new Controller(pd, gf);
+        final Logics obs = new Logics();
         final Pause ps = new Pause();
         final HUD h = new HUD();
+        final Ending en = new Ending();
+        final Music mu = new Music();
+
+        final Controller ctrl = new Controller(pd, gf, mu);
 
         final Timer timer = new Timer();
 
@@ -39,19 +45,18 @@ public class Main {
                 BufferedImage tmpImg = new BufferedImage(600, 800, BufferedImage.TYPE_INT_RGB);
                 Graphics2D tmp = (Graphics2D) tmpImg.getGraphics();
                 if (!gf.isInMenu()) {
-                    if (!gf.menuStat()) {
-                        SetK();
-                        for (int i = getJ(); i < (k / 150); i++) {
-                            astrs[i].update(pd, bl, tmp, gf);
-                        }
-                    }
-                    h.update(tmp, gf, pd);
+                    h.texture(gf, tmp);
+                    h.update(tmp, pd);
+                    obs.moveAll(pd, bl, astrs, tmp, gf, mu);
+                    obs.ani(astrs, tmp);
+                    bl.update(tmp, gf);
+                    pd.update(tmp, gf);
                     ps.menu(tmp, gf);
-                    bl.update(pd, tmp, gf);
-                    pd.update(bl, tmp, gf);
+                    en.end(tmp, gf);
+                    h.blocks(gf, tmp, obs);
                     gf.curPanel().getGraphics().drawImage(tmpImg, 0, 0, null);
                     if (gf.isNewGame()) {
-                        setJ();
+                        obs.moveAll(pd, bl, astrs, tmp, gf, mu);
                         gf.setNewGame(false);
                     }
                 } else {
@@ -65,15 +70,4 @@ public class Main {
 
     }
 
-    private static void setJ() {
-        j = k/150;
-    }
-
-    private static int getJ() {
-        return j;
-    }
-
-    private static void SetK() {
-        k = k + 1;
-    }
 }
